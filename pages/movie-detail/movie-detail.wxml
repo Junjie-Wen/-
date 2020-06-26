@@ -1,0 +1,82 @@
+<view class="movie-detail">
+  <view class="movie-header">
+    <view class="main-content">
+      <view class="movie-top">
+        <view class="movie-img {{isLoading && 'loading-block loading-shink'}}">
+          <image src="{{movieInfo.images.small}}" mode="aspectFit" />
+        </view>
+        <view class="movie-content">
+          <view class="movie-title {{isLoading && 'loading-block loading-shink'}}">{{ movieInfo.title||'...' }}</view>
+          <view class="{{isLoading && 'loading-block loading-shink'}}">{{ movieInfo.original_title }} ({{ movieInfo.year }})</view>
+          <view class="desc {{isLoading && 'loading-block loading-shink'}}" style="margin:6px 0 12px;">
+            {{ movieInfo.countries }} / 
+            {{ movieInfo.genres }} / 
+            {{ movieInfo.pubdates }} / 
+            片长{{ movieInfo.durations[0] }}
+          </view>
+        </view>
+      </view>
+      <view class="movie-score">
+        <view>豆瓣评分 TM</view>
+        <view class="score-wrapper">
+          <text class="score">{{ movieInfo.rating.average||'0.0' }}</text>
+          <view>
+            <star score="{{movieInfo.rating.average}}" />
+            <view class="desc">{{ movieInfo.ratings_count }}人评价</view>
+          </view>
+          <!-- <view class="add-score">
+            <i class="iconfont icon-edit-outline" />
+            我要评分
+          </view> -->
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="movie-info main-content">
+    <view class="block-title">剧情简介</view>
+    <text class="info-content" style="{{showDescFull ? 'height: auto;' : ''}}">{{ movieInfo.summary  }}</text>
+    <text class="more" bind:tap="showDescFullWords" hidden="{{!movieInfo.summary || showDescFull}}">展开</text>
+  </view>
+
+  <view class="movie-actor main-content">
+    <view class="block-title">演职员</view>
+    <scroll-view class="scroll-x" scroll-x="{{true}}">
+      <view class="actor-item" wx:for="{{movieInfo.directors}}" wx:key="{{item.avatars.medium}}">
+        <image src="{{item.avatars.medium}}" />
+        <view>{{ item.name }}</view>
+        <text class="desc">导演</text>
+      </view>
+      <view class="actor-item" wx:for="{{movieInfo.casts}}" wx:key="{{item.avatars.medium}}">
+        <image src="{{item.avatars.medium}}" />
+        <view>{{ item.name }}</view>
+        <text class="desc">演员</text>
+      </view>
+    </scroll-view>
+  </view>
+
+  <view class="movie-pic main-content">
+    <view class="block-title">预告片 / 剧照</view>
+    <scroll-view class="scroll-x" scroll-x="{{true}}">
+      <view class="movie-pic-item" wx:for="{{movieInfo.photos}}" wx:key="{{item.avatars.medium}}">
+        <image src="{{item.image}}" mode="aspectFill" />
+      </view>
+    </scroll-view>
+  </view>
+
+  <view class="movie-comment main-content">
+    <view class="block-title">
+      影评
+    </view>
+    <view class="comment-item" wx:for="{{movieInfo.popular_reviews}}" wx:key="{{index}}">
+      <view class="comment-title desc">
+        <image src="{{item.author.avatar}}" mode="aspectFit" />
+        <text>{{ item.author.name }}</text>
+        <star score="{{item.rating.value*2}}" />
+      </view>
+      <view class="comment-content">{{ item.summary }}</view>
+      <view class="desc">
+        <!-- <text>{{  }}</text> -->
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,14 @@
+<view class="search">
+  <text class="title">JJ-Movie</text>
+  <view class="input-wrapper" >
+    <i class="iconfont icon-search-outline" />
+    <input type="text" 
+      disabled="{{disabled}}"
+      placeholder="输入关键字" 
+      value="{{inputValue}}"
+      bindinput="input"
+      bindconfirm="confirm"
+    />
+    <i wx:if="{{showClearIcon}}" class="iconfont icon-changyongtubiao-mianxing-8 clear" bind:tap="clear" />
+  </view>
+</view>

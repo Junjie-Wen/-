@@ -1,0 +1,11 @@
+<view class="search">
+  <text class="title">JJ-Movie</text>
+</view>
+<view class='username'>
+  <input class='input' placeholder='请输入用户名' maxlength='11' bindinput='inputName'></input>
+</view>
+<view class='password'>
+  <input class='input' placeholder='请输入密码' bindinput='inputPassword'></input>
+</view>
+<button class='button'  bindtap='login'>登陆</button>
+<button class='button'  bindtap='register'>去注册</button>

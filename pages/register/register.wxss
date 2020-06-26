@@ -1,0 +1,30 @@
+.search .title {
+  color: #8991fe;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+}
+.username {
+  margin: 40rpx auto 0 auto;
+}
+
+.password {
+  margin: 30rpx auto 0 auto;
+}
+.Phone {
+  margin: 30rpx auto 0 auto;
+}
+.Address {
+  margin: 30rpx auto 0 auto;
+}
+.button{
+  width: 90%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  margin: 40rpx auto 0 auto;
+  font-size: 36rpx;
+  color: #fff;
+  background-color: #8991fe;
+}

@@ -1,0 +1,17 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/register/register",
+    "pages/index/index",
+    "pages/search-list/search-list",
+    "pages/movie-detail/movie-detail",
+    "pages/movie-Impressions/movie-Impressions"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#8991fe",
+    "navigationBarTitleText": "JJ电影",
+    "navigationBarTextStyle": "white"
+  },
+  "sitemapLocation": "sitemap.json"
+}

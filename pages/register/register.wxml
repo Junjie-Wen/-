@@ -1,0 +1,16 @@
+<view class="search">
+  <text class="title">JJ-Movie</text>
+</view>
+<view class='username'>
+  <input class='input' placeholder='请输入用户名' bindinput='inputName'></input>
+</view>
+<view class='password'>
+  <input class='input' placeholder='请输入密码' bindinput='inputPassword'></input>
+</view>
+<view class='Phone'>
+  <input class='input' placeholder='请输入电话' bindinput='inputPhone'></input>
+</view>
+<view class='Address'>
+  <input class='input' placeholder='请输入地址' bindinput='inputAddress'></input>
+</view>
+<button class='button' bindtap='register'>注册</button>
